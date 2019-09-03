@@ -31,15 +31,6 @@ public class Contato {
 	 * @param telefone Numero de telefone do contato a ser salvo
 	 */
 	public Contato(String nome, String sobrenome, String telefone) {
-		if ("".equals(nome.trim())) {
-			throw new IllegalArgumentException("Nome Vazio");
-		}
-		if ("".equals(sobrenome.trim() )) {
-			throw new IllegalArgumentException("Sobrenome Vazio");
-		}
-		if ("".equals(telefone.trim() )) {
-			throw new IllegalArgumentException("Telefone Vazio");
-		}
 		if (nome == null) {
 			throw new NullPointerException("Nome nulo");
 		}
@@ -49,10 +40,20 @@ public class Contato {
 		if (telefone == null) {
 			throw new NullPointerException("Telefone nulo");
 		}else {
-		this.nome = nome;
-		this.sobrenome = sobrenome;
-		this.telefone = telefone;
+			this.nome = nome;
+			this.sobrenome = sobrenome;
+			this.telefone = telefone;
 		}
+		if ("".equals(nome.trim())) {
+			throw new IllegalArgumentException("Nome Vazio");
+		}
+		if ("".equals(sobrenome.trim() )) {
+			throw new IllegalArgumentException("Sobrenome Vazio");
+		}
+		if ("".equals(telefone.trim() )) {
+			throw new IllegalArgumentException("Telefone Vazio");
+		}
+
 	}
 		
 
@@ -60,65 +61,39 @@ public class Contato {
 
 	/**
 	 * Retorna o primeiro nome
-	 * 
+	 *
 	 * @return Primeiro nome do contato
 	 */
 	public String getNome() {
 		return nome;
 	}
 
-	/**
-	 * Altera o valor do primeiro nome
-	 * 
-	 * @param nome Primeiro nome para ser alterado
-	 */
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	
+
 
 	/**
 	 * Retorna o segundo nome
-	 * 
+	 *
 	 * @return Segundo nome do contato
 	 */
 	public String getSobrenome() {
 		return sobrenome;
 	}
 
-	/**
-	 * Altera o segundo nome
-	 * 
-	 * @param sobrenome Segundo nome para ser alterado
-	 */
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
-	}
+
 
 	/**
 	 * Retorna o numero do telefone
-	 * 
+	 *
 	 * @return Numero de telefone do contato
 	 */
 	public String getTelefone() {
 		return telefone;
 	}
 
-	/**
-	 * Altera o numero de telefone
-	 * 
-	 * @param telefone Numero a ser alterado
-	 */
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-	
-	
-	
-	
+
 	/**
 	 * Retorna todos os atributos do contato
-	 * 
+	 *
 	 * @return Nome, sobrenome e telefone
 	 */
 	public String exibirContato() {
@@ -126,7 +101,6 @@ public class Contato {
 	}
 	
 
-	
 	/**
 	 * Verifica se dois contatos são iguais
 	 * 
@@ -139,7 +113,6 @@ public class Contato {
 		}
 		return false;
 	}
-	
 
 	@Override
 	public int hashCode() {
@@ -147,10 +120,8 @@ public class Contato {
 		int result = 1;
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + ((sobrenome == null) ? 0 : sobrenome.hashCode());
-		result = prime * result + ((telefone == null) ? 0 : telefone.hashCode());
 		return result;
 	}
-
 
 	/**
 	 * Retorna uma string de nome e sobrenome
@@ -162,10 +133,4 @@ public class Contato {
 		return  nome + " " + sobrenome;
 	}
 
-
-
-
-	
-	
-	
 }

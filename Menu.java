@@ -23,13 +23,22 @@ public class Menu {
 		int posicao;
 		
 		opcaoMenu();
-		
-		
+
+
+		/**
+		 * Laço de repetição que vai executar o programa
+		 */
 		while (true) {
 			Scanner read  = new Scanner(System.in);	
 			opcao = read.next().toUpperCase();
 
-			
+			/**
+			 * lançando exceção para opcao nulo
+			 */
+			if (opcao == null) {
+				throw new NullPointerException();
+
+			}
 		
 			if (opcao.equals("C") || opcao.equals("L") || opcao.equals("E") || opcao.equals("S")) {
 				
